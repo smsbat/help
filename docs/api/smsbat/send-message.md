@@ -53,7 +53,7 @@ Choose one of three authentication methods:
 === "API Key Header"
 
     ```bash
-    curl -X POST https://api.smsbat.com/bat/messagelist \
+    curl -X POST https://restapi.smsbat.com/bat/messagelist \
       -H "X-Authorization-Key: your-api-key" \
       -H "Content-Type: application/json" \
       -d '{
@@ -69,7 +69,7 @@ Choose one of three authentication methods:
 === "HTTP Basic Auth"
 
     ```bash
-    curl -X POST https://api.smsbat.com/bat/messagelist \
+    curl -X POST https://restapi.smsbat.com/bat/messagelist \
       -u "username:password" \
       -H "Content-Type: application/json" \
       -d '{
@@ -85,7 +85,7 @@ Choose one of three authentication methods:
 === "API Key as Password"
 
     ```bash
-    curl -X POST https://api.smsbat.com/bat/messagelist \
+    curl -X POST https://restapi.smsbat.com/bat/messagelist \
       -u "@:your-api-key" \
       -H "Content-Type: application/json" \
       -d '{

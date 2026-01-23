@@ -23,21 +23,21 @@ Use any of the three authentication methods:
 === "API Key Header"
 
     ```bash
-    curl -X GET https://api.smsbat.com/bat/message/abc123def456 \
+    curl -X GET https://restapi.smsbat.com/bat/message/abc123def456 \
       -H "X-Authorization-Key: your-api-key"
     ```
 
 === "HTTP Basic Auth"
 
     ```bash
-    curl -X GET https://api.smsbat.com/bat/message/abc123def456 \
+    curl -X GET https://restapi.smsbat.com/bat/message/abc123def456 \
       -u "username:password"
     ```
 
 === "API Key as Password"
 
     ```bash
-    curl -X GET https://api.smsbat.com/bat/message/abc123def456 \
+    curl -X GET https://restapi.smsbat.com/bat/message/abc123def456 \
       -u "@:your-api-key"
     ```
 
@@ -182,7 +182,7 @@ async function checkMessageStatuses(messageIds) {
   const statuses = await Promise.all(
     messageIds.map(async (messageId) => {
       const response = await fetch(
-        `https://api.smsbat.com/bat/message/${messageId}`,
+        `https://restapi.smsbat.com/bat/message/${messageId}`,
         {
           headers: {
             'X-Authorization-Key': 'your-api-key'
@@ -214,7 +214,7 @@ Poll the status endpoint to track delivery:
 async function waitForDelivery(messageId, maxAttempts = 12) {
   for (let i = 0; i < maxAttempts; i++) {
     const response = await fetch(
-      `https://api.smsbat.com/bat/message/${messageId}`,
+      `https://restapi.smsbat.com/bat/message/${messageId}`,
       {
         headers: { 'X-Authorization-Key': 'your-api-key' }
       }
@@ -265,7 +265,7 @@ import requests
 import time
 
 def check_status(message_id, api_key):
-    url = f"https://api.smsbat.com/bat/message/{message_id}"
+    url = f"https://restapi.smsbat.com/bat/message/{message_id}"
     headers = {"X-Authorization-Key": api_key}
 
     response = requests.get(url, headers=headers)
@@ -304,7 +304,7 @@ else:
 <?php
 
 function checkStatus($messageId, $apiKey) {
-    $url = "https://api.smsbat.com/bat/message/" . $messageId;
+    $url = "https://restapi.smsbat.com/bat/message/" . $messageId;
 
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -357,7 +357,7 @@ const axios = require('axios');
 
 async function checkStatus(messageId, apiKey) {
   const response = await axios.get(
-    `https://api.smsbat.com/bat/message/${messageId}`,
+    `https://restapi.smsbat.com/bat/message/${messageId}`,
     {
       headers: { 'X-Authorization-Key': apiKey }
     }
@@ -417,7 +417,7 @@ async function checkStatusWithRetry(messageId, apiKey, retries = 3) {
   for (let i = 0; i < retries; i++) {
     try {
       const response = await fetch(
-        `https://api.smsbat.com/bat/message/${messageId}`,
+        `https://restapi.smsbat.com/bat/message/${messageId}`,
         {
           headers: { 'X-Authorization-Key': apiKey }
         }

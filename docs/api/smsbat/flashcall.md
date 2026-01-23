@@ -79,7 +79,7 @@ Phone: +380XXXXXXXXX
 Your server requests flash call verification:
 
 ```bash
-curl -X POST https://api.smsbat.com/bat/messagelist \
+curl -X POST https://restapi.smsbat.com/bat/messagelist \
   -H "X-Authorization-Key: your-api-key" \
   -H "Content-Type: application/json" \
   -d '{
@@ -248,7 +248,7 @@ app.post('/request-verification', async (req, res) => {
   const { phoneNumber } = req.body;
 
   // 1. Request flash call
-  const response = await fetch('https://api.smsbat.com/bat/messagelist', {
+  const response = await fetch('https://restapi.smsbat.com/bat/messagelist', {
     method: 'POST',
     headers: {
       'X-Authorization-Key': process.env.SMSBAT_API_KEY,

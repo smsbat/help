@@ -6,7 +6,7 @@ SMSBAT is a RESTful API platform for sending various types of messages including
 
 Requests to SMSBAT API are transmitted to an endpoint with localization. Request the address from your Manager beforehand.
 
-Example: `https://api.smsbat.com` (actual URL may vary based on your region)
+Example: `https://restapi.smsbat.com` (actual URL may vary based on your region)
 
 ## Authentication
 
@@ -17,7 +17,7 @@ SMSBAT API supports three authentication methods:
 Use your username and password credentials:
 
 ```bash
-curl -X POST https://api.smsbat.com/bat/messagelist \
+curl -X POST https://restapi.smsbat.com/bat/messagelist \
   -u "username:password" \
   -H "Content-Type: application/json" \
   -d @request.json
@@ -28,7 +28,7 @@ curl -X POST https://api.smsbat.com/bat/messagelist \
 Use the `X-Authorization-Key` header:
 
 ```bash
-curl -X POST https://api.smsbat.com/bat/messagelist \
+curl -X POST https://restapi.smsbat.com/bat/messagelist \
   -H "X-Authorization-Key: your-api-key" \
   -H "Content-Type: application/json" \
   -d @request.json
@@ -39,7 +39,7 @@ curl -X POST https://api.smsbat.com/bat/messagelist \
 Use `@` as username and your API key as password:
 
 ```bash
-curl -X POST https://api.smsbat.com/bat/messagelist \
+curl -X POST https://restapi.smsbat.com/bat/messagelist \
   -u "@:your-api-key" \
   -H "Content-Type: application/json" \
   -d @request.json

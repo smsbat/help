@@ -41,7 +41,7 @@ SMS (Short Message Service) is ideal for:
 ### Simple SMS
 
 ```bash
-curl -X POST https://api.smsbat.com/bat/messagelist \
+curl -X POST https://restapi.smsbat.com/bat/messagelist \
   -H "X-Authorization-Key: your-api-key" \
   -H "Content-Type: application/json" \
   -d '{
