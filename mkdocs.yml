@@ -9,6 +9,8 @@ repo_name: help.smsbat.com
 theme:
   name: material
   language: en
+  favicon: images/favicon.ico
+  logo: images/favicon.ico
   palette:
     # Light mode
     - scheme: default
