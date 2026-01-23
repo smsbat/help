@@ -5,7 +5,7 @@ ChatHub REST API manages Viber business chats, client conversations, and custome
 ## Base URL
 
 ```
-https://api.chathub.smsbat.com
+https://chatapi.smsbat.com
 ```
 
 ## Swagger Documentation
@@ -13,7 +13,7 @@ https://api.chathub.smsbat.com
 Interactive API documentation is available at:
 
 ```
-https://api.chathub.smsbat.com/swagger
+https://chatapi.smsbat.com/index.html
 ```
 
 ## Authentication
@@ -23,14 +23,14 @@ ChatHub uses a Bearer token-based authentication system with JWT tokens. Tokens 
 ### Method 1: Authorization Header
 
 ```bash
-curl -X GET https://api.chathub.smsbat.com/api/company/organization \
+curl -X GET https://chatapi.smsbat.com/api/company/organization \
   -H "Authorization: Bearer your-jwt-token"
 ```
 
 ### Method 2: X-Authorization-Key Header
 
 ```bash
-curl -X GET https://api.chathub.smsbat.com/api/company/organization \
+curl -X GET https://chatapi.smsbat.com/api/company/organization \
   -H "X-Authorization-Key: your-jwt-token"
 ```
 
@@ -59,7 +59,8 @@ graph LR
 | GET | `/api/company/organization` | Retrieve organization list |
 | GET | `/api/operator` | List operators by organization |
 | POST | `/api/operator/synchronize` | Add new operators |
-| POST | `/api/operator/get-token` | Generate operator tokens |
+| POST | `/api/operator/status` | Change operator status |
+| POST | `/api/operator/get-token` | Generate operator tokens (max 24h expiration) |
 | POST | `/api/operator/validate-token` | Verify token validity |
 
 ## Key Features
@@ -78,7 +79,8 @@ Obtain and manage organization-level tokens for API access.
 
 - List operators by organization
 - Add new operators
-- Generate operator-specific tokens
+- Change operator status (Active/Inactive/Deleted)
+- Generate operator-specific tokens (max 24 hours)
 - Validate operator tokens
 
 ### Widget Integration

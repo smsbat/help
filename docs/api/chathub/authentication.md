@@ -24,7 +24,7 @@ Company tokens provide organization-level access to ChatHub API.
 **Request:**
 
 ```bash
-curl -X POST https://api.chathub.smsbat.com/api/company/get-token \
+curl -X POST https://chatapi.smsbat.com/api/company/get-token \
   -H "Content-Type: application/json" \
   -d '{
     "login": "your-company-login",
@@ -56,14 +56,14 @@ Include the company token in API requests using one of two methods:
 #### Method 1: Authorization Header (Recommended)
 
 ```bash
-curl -X GET https://api.chathub.smsbat.com/api/company/organization \
+curl -X GET https://chatapi.smsbat.com/api/company/organization \
   -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
 ```
 
 #### Method 2: X-Authorization-Key Header
 
 ```bash
-curl -X GET https://api.chathub.smsbat.com/api/company/organization \
+curl -X GET https://chatapi.smsbat.com/api/company/organization \
   -H "X-Authorization-Key: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
 ```
 
@@ -78,7 +78,7 @@ Operator tokens provide user-specific access for individual operators within an 
 **Request:**
 
 ```bash
-curl -X POST https://api.chathub.smsbat.com/api/operator/get-token \
+curl -X POST https://chatapi.smsbat.com/api/operator/get-token \
   -H "Authorization: Bearer {company-token}" \
   -H "Content-Type: application/json" \
   -d '{
@@ -114,7 +114,7 @@ curl -X POST https://api.chathub.smsbat.com/api/operator/get-token \
 Include the operator token in API requests:
 
 ```bash
-curl -X GET https://api.chathub.smsbat.com/api/operator \
+curl -X GET https://chatapi.smsbat.com/api/operator \
   -H "Authorization: Bearer {operator-token}"
 ```
 
@@ -127,7 +127,7 @@ Verify that a token is still valid before using it.
 **Request:**
 
 ```bash
-curl -X POST https://api.chathub.smsbat.com/api/operator/validate-token \
+curl -X POST https://chatapi.smsbat.com/api/operator/validate-token \
   -H "Authorization: Bearer {company-token}" \
   -H "Content-Type: application/json" \
   -d '{
@@ -228,7 +228,7 @@ class ChatHubAuth:
         return response.json()
 
 # Usage
-auth = ChatHubAuth("https://api.chathub.smsbat.com")
+auth = ChatHubAuth("https://chatapi.smsbat.com")
 
 # Get company token
 company_token = auth.get_company_token("login", "password")
@@ -299,7 +299,7 @@ class ChatHubAuth {
 }
 
 // Usage
-const auth = new ChatHubAuth('https://api.chathub.smsbat.com');
+const auth = new ChatHubAuth('https://chatapi.smsbat.com');
 
 async function authenticate() {
   // Get company token
@@ -398,7 +398,7 @@ class ChatHubAuth {
 }
 
 // Usage
-$auth = new ChatHubAuth('https://api.chathub.smsbat.com');
+$auth = new ChatHubAuth('https://chatapi.smsbat.com');
 
 // Get company token
 $companyToken = $auth->getCompanyToken('login', 'password');
@@ -477,7 +477,7 @@ Always use HTTPS when sending authentication requests:
 
 ```javascript
 // ✅ Correct
-const baseUrl = 'https://api.chathub.smsbat.com';
+const baseUrl = 'https://chatapi.smsbat.com';
 
 // ❌ Wrong - never use HTTP for authentication
 const baseUrl = 'http://api.chathub.smsbat.com';

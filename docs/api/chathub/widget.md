@@ -313,7 +313,7 @@ async function generateOperatorToken(companyToken, operatorId) {
   const expiresAt = new Date(Date.now() + 24 * 60 * 60 * 1000); // 24 hours
 
   const response = await fetch(
-    'https://api.chathub.smsbat.com/api/operator/get-token',
+    'https://chatapi.smsbat.com/api/operator/get-token',
     {
       method: 'POST',
       headers: {

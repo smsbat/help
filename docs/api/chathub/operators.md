@@ -25,7 +25,7 @@ GET /api/operator?organizationId={id}
 ### Request
 
 ```bash
-curl -X GET "https://api.chathub.smsbat.com/api/operator?organizationId=24" \
+curl -X GET "https://chatapi.smsbat.com/api/operator?organizationId=24" \
   -H "Authorization: Bearer {company-token}" \
   -H "Accept: text/plain"
 ```
@@ -109,7 +109,7 @@ POST /api/operator/synchronize
 ### Request
 
 ```bash
-curl -X POST https://api.chathub.smsbat.com/api/operator/synchronize \
+curl -X POST https://chatapi.smsbat.com/api/operator/synchronize \
   -H "Authorization: Bearer {company-token}" \
   -H "Content-Type: application/json" \
   -d '[
@@ -165,6 +165,96 @@ Array of operator objects:
 ]
 ```
 
+## Change Operator Status
+
+Update operator status (Active/Inactive/Deleted).
+
+### Endpoint
+
+```
+POST /api/operator/status
+```
+
+### Request
+
+```bash
+curl -X POST https://chatapi.smsbat.com/api/operator/status \
+  -H "Authorization: Bearer {company-token}" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "id": 104,
+    "status": 1
+  }'
+```
+
+### Request Body
+
+```json
+{
+  "id": 0,
+  "status": 0
+}
+```
+
+### Request Fields
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `id` | integer | Yes | Operator ID |
+| `status` | integer | Yes | New status (0=Active, 1=Inactive, 2=Deleted) |
+
+### Response
+
+```
+200 OK
+```
+
+Success returns HTTP 200 with no response body.
+
+### Status Values
+
+| Status | Value | Description |
+|--------|-------|-------------|
+| Active | 0 | Operator can handle chats |
+| Inactive | 1 | Operator temporarily disabled |
+| Deleted | 2 | Operator removed from system |
+
+### Example: Deactivate Operator
+
+```bash
+curl -X POST https://chatapi.smsbat.com/api/operator/status \
+  -H "Authorization: Bearer {company-token}" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "id": 104,
+    "status": 1
+  }'
+```
+
+### Example: Reactivate Operator
+
+```bash
+curl -X POST https://chatapi.smsbat.com/api/operator/status \
+  -H "Authorization: Bearer {company-token}" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "id": 104,
+    "status": 0
+  }'
+```
+
+### Example: Delete Operator
+
+```bash
+curl -X POST https://chatapi.smsbat.com/api/operator/status \
+  -H "Authorization: Bearer {company-token}" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "id": 104,
+    "status": 2
+  }'
+```
+
 ## Implementation Examples
 
 ### Python
@@ -173,7 +263,7 @@ Array of operator objects:
 import requests
 
 class OperatorManager:
-    def __init__(self, company_token, base_url='https://api.chathub.smsbat.com'):
+    def __init__(self, company_token, base_url='https://chatapi.smsbat.com'):
         self.company_token = company_token
         self.base_url = base_url
         self.headers = {
@@ -217,6 +307,20 @@ class OperatorManager:
                 return operator
         return None
 
+    def change_operator_status(self, operator_id, status):
+        """Change operator status
+        Args:
+            operator_id: Operator ID
+            status: 0 (Active), 1 (Inactive), 2 (Deleted)
+        """
+        response = requests.post(
+            f'{self.base_url}/api/operator/status',
+            headers={**self.headers, 'Content-Type': 'application/json'},
+            json={'id': operator_id, 'status': status}
+        )
+        response.raise_for_status()
+        return response.status_code == 200
+
 # Usage
 manager = OperatorManager('your-company-token')
 
@@ -239,6 +343,13 @@ print(f"Added {len(new_operators)} operators")
 operator = manager.find_operator_by_name(24, 'John Doe')
 if operator:
     print(f"Found operator: {operator['name']} (ID: {operator['id']})")
+
+# Change operator status
+manager.change_operator_status(104, 1)  # Deactivate
+print("Operator deactivated")
+
+manager.change_operator_status(104, 0)  # Reactivate
+print("Operator reactivated")
 ```
 
 ### JavaScript (Node.js)
@@ -247,7 +358,7 @@ if operator:
 const axios = require('axios');
 
 class OperatorManager {
-  constructor(companyToken, baseUrl = 'https://api.chathub.smsbat.com') {
+  constructor(companyToken, baseUrl = 'https://chatapi.smsbat.com') {
     this.companyToken = companyToken;
     this.baseUrl = baseUrl;
     this.headers = {
@@ -299,6 +410,21 @@ class OperatorManager {
     const operators = await this.listOperators(organizationId);
     return operators.find(op => op.id === operatorId);
   }
+
+  async changeOperatorStatus(operatorId, status) {
+    const response = await axios.post(
+      `${this.baseUrl}/api/operator/status`,
+      { id: operatorId, status },
+      {
+        headers: {
+          ...this.headers,
+          'Content-Type': 'application/json'
+        }
+      }
+    );
+
+    return response.status === 200;
+  }
 }
 
 // Usage
@@ -325,6 +451,13 @@ async function manageOperators() {
   if (operator) {
     console.log(`Found: ${operator.name} (ID: ${operator.id})`);
   }
+
+  // Change operator status
+  await manager.changeOperatorStatus(104, 1); // Deactivate
+  console.log('Operator deactivated');
+
+  await manager.changeOperatorStatus(104, 0); // Reactivate
+  console.log('Operator reactivated');
 }
 
 manageOperators();
@@ -339,7 +472,7 @@ class OperatorManager {
     private $companyToken;
     private $baseUrl;
 
-    public function __construct($companyToken, $baseUrl = 'https://api.chathub.smsbat.com') {
+    public function __construct($companyToken, $baseUrl = 'https://chatapi.smsbat.com') {
         $this->companyToken = $companyToken;
         $this->baseUrl = $baseUrl;
     }
@@ -395,6 +528,27 @@ class OperatorManager {
         }
 
         return null;
+    }
+
+    public function changeOperatorStatus($operatorId, $status) {
+        $ch = curl_init($this->baseUrl . '/api/operator/status');
+
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+            'Authorization: Bearer ' . $this->companyToken,
+            'Content-Type: application/json'
+        ]);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode([
+            'id' => $operatorId,
+            'status' => $status
+        ]));
+
+        $response = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+
+        return $httpCode === 200;
     }
 }
 

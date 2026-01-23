@@ -24,7 +24,7 @@ GET /api/company/organization
 ### Request
 
 ```bash
-curl -X GET https://api.chathub.smsbat.com/api/company/organization \
+curl -X GET https://chatapi.smsbat.com/api/company/organization \
   -H "Authorization: Bearer {company-token}" \
   -H "Accept: text/plain"
 ```
@@ -109,7 +109,7 @@ import requests
 def get_organizations(company_token):
     """Get list of all organizations"""
     response = requests.get(
-        'https://api.chathub.smsbat.com/api/company/organization',
+        'https://chatapi.smsbat.com/api/company/organization',
         headers={
             'Authorization': f'Bearer {company_token}',
             'Accept': 'text/plain'
@@ -163,7 +163,7 @@ const axios = require('axios');
 class OrganizationManager {
   constructor(companyToken) {
     this.companyToken = companyToken;
-    this.baseUrl = 'https://api.chathub.smsbat.com';
+    this.baseUrl = 'https://chatapi.smsbat.com';
   }
 
   async getOrganizations() {
@@ -230,7 +230,7 @@ manageOrganizations();
 
 class OrganizationManager {
     private $companyToken;
-    private $baseUrl = 'https://api.chathub.smsbat.com';
+    private $baseUrl = 'https://chatapi.smsbat.com';
 
     public function __construct($companyToken) {
         $this->companyToken = $companyToken;
