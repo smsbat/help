@@ -1,0 +1,135 @@
+site_name: SMSBAT Documentation
+site_url: https://help.smsbat.com
+site_description: Official documentation for SMSBAT messaging platform
+site_author: SMSBAT Team
+
+repo_url: https://github.com/smsbat/help
+repo_name: help.smsbat.com
+
+theme:
+  name: material
+  language: en
+  palette:
+    # Light mode
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search:
+      lang:
+        - en
+        - uk
+  - i18n:
+      docs_structure: folder
+      fallback_to_default: true
+      reconfigure_material: true
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: uk
+          name: Українська
+          build: true
+          nav_translations:
+            Home: Головна
+            Using SMSBAT: Використання SMSBAT
+            Quickstart: Швидкий старт
+            Authentication: Автентифікація
+            Message Types: Типи повідомлень
+            Delivery Status: Статуси доставки
+            Fallback Strategies: Fallback стратегії
+            API: API
+            Integrations: Інтеграції
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.mark
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/smsbat
+    - icon: fontawesome/solid/envelope
+      link: mailto:support@smsbat.com
+    - icon: fontawesome/solid/globe
+      link: https://smsbat.com
+
+nav:
+  - Home: index.md
+  - Using SMSBAT:
+    - using-smsbat/index.md
+    - Quickstart: using-smsbat/quickstart.md
+    - Authentication: using-smsbat/authentication.md
+    - Message Types: using-smsbat/message-types.md
+    - Delivery Status: using-smsbat/delivery-status.md
+    - Fallback Strategies: using-smsbat/fallback.md
+  - API:
+    - api/index.md
+    - SMSBAT API:
+      - api/smsbat/index.md
+      - Send Message: api/smsbat/send-message.md
+      - Viber Messages: api/smsbat/viber.md
+      - SMS Messages: api/smsbat/sms.md
+      - RCS Messages: api/smsbat/rcs.md
+      - Flash Call: api/smsbat/flashcall.md
+      - Check Status: api/smsbat/status.md
+    - ChatHub API:
+      - api/chathub/index.md
+      - Authentication: api/chathub/authentication.md
+      - Operators: api/chathub/operators.md
+      - Organizations: api/chathub/organizations.md
+      - Widget Integration: api/chathub/widget.md
+    - Cascade API:
+      - api/cascade/index.md
+      - Send Cascade Messages: api/cascade/send.md
+      - Message Variables: api/cascade/variables.md
+      - Message Types: api/cascade/message-types.md
+  - Integrations:
+    - integrations/index.md
+    - PHP: integrations/php.md
+    - Python: integrations/python.md
+    - Node.js: integrations/nodejs.md
+    - Java: integrations/java.md
+    - C#: integrations/csharp.md
+
+copyright: Copyright &copy; 2025 SMSBat
