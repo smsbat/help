@@ -1,4 +1,4 @@
-site_name: SMSBAT Documentation
+site_name: SMSBAT Help Center
 site_url: https://help.smsbat.com
 site_description: Official documentation for SMSBAT messaging platform
 site_author: SMSBAT Team
@@ -96,6 +96,9 @@ extra:
     - icon: fontawesome/solid/globe
       link: https://smsbat.com
 
+extra_css:
+  - stylesheets/extra.css
+
 nav:
   - Home: index.md
   - Using SMSBAT:
@@ -134,4 +137,4 @@ nav:
     - Java: integrations/java.md
     - C#: integrations/csharp.md
 
-copyright: Copyright &copy; 2025 SMSBat
+copyright: Copyright &copy; 2025 SMSBAT
