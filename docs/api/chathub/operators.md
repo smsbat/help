@@ -575,6 +575,13 @@ $operator = $manager->findOperatorByName(24, 'John Doe');
 if ($operator) {
     echo "Found: " . $operator['name'] . " (ID: " . $operator['id'] . ")\n";
 }
+
+// Change operator status
+$manager->changeOperatorStatus(104, 1); // Deactivate
+echo "Operator deactivated\n";
+
+$manager->changeOperatorStatus(104, 0); // Reactivate
+echo "Operator reactivated\n";
 ```
 
 ## Common Use Cases

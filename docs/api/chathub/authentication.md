@@ -101,7 +101,9 @@ curl -X POST https://chatapi.smsbat.com/api/operator/get-token \
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
 | `id` | integer | Yes | Operator ID |
-| `expiresAt` | string (ISO 8601) | Yes | Token expiration date and time |
+| `expiresAt` | string (ISO 8601) | Yes | Token expiration date and time (max 24 hours from now) |
+
+**Important:** Maximum token lifetime is 24 hours. The `expiresAt` parameter cannot be more than 24 hours in the future.
 
 **Response:**
 
@@ -147,9 +149,11 @@ curl -X POST https://chatapi.smsbat.com/api/operator/validate-token \
 
 ```json
 {
-  "valid": true,
+  "isValid": true,
   "operatorId": 123,
-  "expiresAt": "2025-12-31T23:59:59Z"
+  "clientId": 0,
+  "expiresAt": "2025-12-31T23:59:59Z",
+  "error": null
 }
 ```
 
@@ -157,8 +161,8 @@ curl -X POST https://chatapi.smsbat.com/api/operator/validate-token \
 
 ```json
 {
-  "valid": false,
-  "error": "Token expired"
+  "isValid": false,
+  "error": "Invalid token"
 }
 ```
 
@@ -310,7 +314,7 @@ async function authenticate() {
 
   // Validate token
   const validation = await auth.validateToken(operatorToken);
-  console.log('Token valid:', validation.valid);
+  console.log('Token valid:', validation.isValid);
 }
 
 authenticate();
@@ -408,7 +412,7 @@ $operatorToken = $auth->getOperatorToken(123, 30);
 
 // Validate token
 $validation = $auth->validateToken($operatorToken);
-echo "Token valid: " . ($validation['valid'] ? 'Yes' : 'No');
+echo "Token valid: " . ($validation['isValid'] ? 'Yes' : 'No');
 ```
 
 ## Best Practices
@@ -460,7 +464,7 @@ async function performSecureOperation(token, operation) {
   // Validate token first
   const validation = await validateToken(token);
 
-  if (!validation.valid) {
+  if (!validation.isValid) {
     throw new Error('Token expired or invalid');
   }
 
