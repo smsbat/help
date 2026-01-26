@@ -8,6 +8,7 @@ theme:
   language: en
   favicon: images/favicon.ico
   logo: images/favicon.ico
+  custom_dir: docs/overrides
   palette:
     # Light mode
     - scheme: default
