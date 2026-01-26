@@ -3,9 +3,6 @@ site_url: https://help.smsbat.com
 site_description: Official documentation for SMSBAT messaging platform
 site_author: SMSBAT Team
 
-repo_url: https://github.com/smsbat/help
-repo_name: help.smsbat.com
-
 theme:
   name: material
   language: en

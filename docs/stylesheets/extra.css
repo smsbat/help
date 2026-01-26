@@ -8,3 +8,16 @@
 [dir=ltr] .md-header__title {
     margin-left: 0;
 }
+
+/* Custom primary color #3070b6 */
+[data-md-color-scheme="default"] {
+    --md-primary-fg-color: #3070b6;
+    --md-primary-fg-color--light: #4a8bc7;
+    --md-primary-fg-color--dark: #2560a0;
+}
+
+[data-md-color-scheme="slate"] {
+    --md-primary-fg-color: #3070b6;
+    --md-primary-fg-color--light: #4a8bc7;
+    --md-primary-fg-color--dark: #2560a0;
+}
