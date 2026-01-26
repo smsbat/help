@@ -64,7 +64,7 @@ Each API uses different authentication methods:
 
 Need help? Contact our support team:
 
-- Email: [support@smsbat.com](mailto:support@smsbat.com)
+- Email: [help@smsbat.com](mailto:help@smsbat.com)
 - Documentation: [developers.smsbat.com](https://developers.smsbat.com)
 
 ## Rate Limits

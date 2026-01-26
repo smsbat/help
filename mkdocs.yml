@@ -90,7 +90,7 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/smsbat
     - icon: fontawesome/solid/envelope
-      link: mailto:support@smsbat.com
+      link: mailto:help@smsbat.com
     - icon: fontawesome/solid/globe
       link: https://smsbat.com
 
@@ -134,5 +134,3 @@ nav:
     - Node.js: integrations/nodejs.md
     - Java: integrations/java.md
     - C#: integrations/csharp.md
-
-copyright: Copyright &copy; 2025 SMSBAT
