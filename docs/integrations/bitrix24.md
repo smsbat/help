@@ -23,13 +23,19 @@ The SMSBAT integration with Bitrix24 allows you to:
 
 Navigate to **Applications > Developers** in your Bitrix24 menu.
 
+![Bitrix24 menu — Applications > Developers](../images/integrations/bitrix24/menu-developers.png)
+
 ### Step 2: Go to the "Other" Tab
 
 In the developer section, switch to the **Other** tab to find additional application types.
 
+![Developers section — Other tab](../images/integrations/bitrix24/developers-other.png)
+
 ### Step 3: Select "Local Application"
 
 Choose **Local Application** from the available options.
+
+![Select Local Application](../images/integrations/bitrix24/local-application.png)
 
 ### Step 4: Configure Application Settings
 
@@ -49,6 +55,8 @@ Set the following **permissions**:
 | External messenger connectors | `imconnector` |
 | Message service | `messageservice` |
 
+![Application settings with permissions](../images/integrations/bitrix24/app-settings.png)
+
 ### Step 5: Save the Application
 
 Click the **Save** button to register the application.
@@ -59,6 +67,8 @@ After saving, Bitrix24 will generate unique credentials for the application:
 
 - **client_id** - Application code
 - **client_secret** - Application secret key
+
+![Application credentials — client_id and client_secret](../images/integrations/bitrix24/app-credentials.png)
 
 !!! warning "Important"
     Copy and save both `client_id` and `client_secret` values immediately. You will need them in the next step.
@@ -80,11 +90,15 @@ Fill in the following fields:
 !!! info "SMS Fallback"
     When **Send messages with SMS fallback** is enabled, messages will be delivered via both Viber and SMS channels. If disabled, messages will be sent via Viber only.
 
+![SMSBAT Messenger Settings page](../images/integrations/bitrix24/messenger-settings.png)
+
 Click **Save Settings** to apply the configuration.
 
 ### Step 8: Activate in Contact Center
 
 Navigate to the **Contact Center** section in Bitrix24 and activate the **SMSBat Messenger** channel.
+
+![Contact Center with SMSBat Messenger](../images/integrations/bitrix24/contact-center.png)
 
 ### Step 9: Start Using
 
