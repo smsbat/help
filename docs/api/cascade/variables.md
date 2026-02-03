@@ -42,7 +42,7 @@ Before sending messages, upload variable values to the API:
 
 **Endpoint:**
 ```
-POST https://api.counterbat.com/api/items
+POST https://restapi.smsbat.com/api/items
 ```
 
 **Request:**
@@ -97,7 +97,7 @@ Hello John! Your verification code is 12345. Visit: https://sho.rt/abc123
 ### Upload Variables
 
 ```bash
-curl -X POST https://api.counterbat.com/api/items \
+curl -X POST https://restapi.smsbat.com/api/items \
   -H "Content-Type: application/json" \
   -H "X-Authorization-Key: your-api-key" \
   -d '{
@@ -124,7 +124,7 @@ curl -X POST https://api.counterbat.com/api/items \
 ### Send Message
 
 ```bash
-curl -X POST https://api.counterbat.com/api/CascadeMessage/send_message/async \
+curl -X POST https://restapi.smsbat.com/api/CascadeMessage/send_message/async \
   -H "Content-Type: application/json" \
   -H "X-Authorization-Key: your-api-key" \
   -d '[
@@ -236,7 +236,7 @@ import requests
 
 class CascadeVariables:
     def __init__(self, api_key):
-        self.base_url = 'https://api.counterbat.com'
+        self.base_url = 'https://restapi.smsbat.com'
         self.headers = {
             'Content-Type': 'application/json',
             'X-Authorization-Key': api_key
@@ -306,7 +306,7 @@ const axios = require('axios');
 
 class CascadeVariables {
   constructor(apiKey) {
-    this.baseUrl = 'https://api.counterbat.com';
+    this.baseUrl = 'https://restapi.smsbat.com';
     this.headers = {
       'Content-Type': 'application/json',
       'X-Authorization-Key': apiKey
@@ -369,7 +369,7 @@ console.log('Message sent:', result.messageId);
 <?php
 
 class CascadeVariables {
-    private $baseUrl = 'https://api.counterbat.com';
+    private $baseUrl = 'https://restapi.smsbat.com';
     private $apiKey;
 
     public function __construct($apiKey) {

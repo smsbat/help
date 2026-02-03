@@ -104,7 +104,7 @@ Integration examples and code in various programming languages.
 ## Need Help?
 
 - Browse the relevant documentation section
-- Contact support: support@smsbat.com
+- Contact support: help@smsbat.com
 - Visit our website: [smsbat.com](https://smsbat.com)
 
 ---

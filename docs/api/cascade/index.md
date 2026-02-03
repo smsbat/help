@@ -5,7 +5,7 @@ The Cascade API enables sending messages across multiple platforms with a single
 ## Base URL
 
 ```
-https://api.counterbat.com
+https://restapi.smsbat.com
 ```
 
 ## Authentication
@@ -15,7 +15,7 @@ Cascade API uses header-based authentication with three possible authentication 
 ### Method 1: SMSBAT API Key
 
 ```bash
-curl -X POST https://api.counterbat.com/api/CascadeMessage/send_message/async \
+curl -X POST https://restapi.smsbat.com/api/CascadeMessage/send_message/async \
   -H "X-Authorization-Key: your-smsbat-api-key" \
   -H "Content-Type: application/json" \
   -d @request.json
@@ -24,7 +24,7 @@ curl -X POST https://api.counterbat.com/api/CascadeMessage/send_message/async \
 ### Method 2: Viber Bot Token
 
 ```bash
-curl -X POST https://api.counterbat.com/api/CascadeMessage/send_message/async \
+curl -X POST https://restapi.smsbat.com/api/CascadeMessage/send_message/async \
   -H "X-Viber-Auth-Token: your-viber-bot-token" \
   -H "Content-Type: application/json" \
   -d @request.json
@@ -33,7 +33,7 @@ curl -X POST https://api.counterbat.com/api/CascadeMessage/send_message/async \
 ### Method 3: Telegram Bot Key
 
 ```bash
-curl -X POST https://api.counterbat.com/api/CascadeMessage/send_message/async \
+curl -X POST https://restapi.smsbat.com/api/CascadeMessage/send_message/async \
   -H "X-Tg-Bot-Key: your-telegram-bot-key" \
   -H "Content-Type: application/json" \
   -d @request.json

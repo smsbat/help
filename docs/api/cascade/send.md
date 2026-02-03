@@ -146,7 +146,7 @@ Phone verification via automated call:
 ### Basic Transaction
 
 ```bash
-curl -X POST https://api.counterbat.com/api/CascadeMessage/send_message/async \
+curl -X POST https://restapi.smsbat.com/api/CascadeMessage/send_message/async \
   -H "Content-Type: application/json" \
   -H "X-Authorization-Key: your-api-key" \
   -d '[
@@ -163,7 +163,7 @@ curl -X POST https://api.counterbat.com/api/CascadeMessage/send_message/async \
 ### Scheduled Promo
 
 ```bash
-curl -X POST https://api.counterbat.com/api/CascadeMessage/send_message/async \
+curl -X POST https://restapi.smsbat.com/api/CascadeMessage/send_message/async \
   -H "Content-Type: application/json" \
   -H "X-Authorization-Key: your-api-key" \
   -d '[
@@ -182,7 +182,7 @@ curl -X POST https://api.counterbat.com/api/CascadeMessage/send_message/async \
 ### Bulk Messages
 
 ```bash
-curl -X POST https://api.counterbat.com/api/CascadeMessage/send_message/async \
+curl -X POST https://restapi.smsbat.com/api/CascadeMessage/send_message/async \
   -H "Content-Type: application/json" \
   -H "X-Authorization-Key: your-api-key" \
   -d '[
@@ -246,7 +246,7 @@ from datetime import datetime, timedelta
 
 class CascadeMessenger:
     def __init__(self, api_key):
-        self.base_url = 'https://api.counterbat.com'
+        self.base_url = 'https://restapi.smsbat.com'
         self.headers = {
             'Content-Type': 'application/json',
             'X-Authorization-Key': api_key
@@ -338,7 +338,7 @@ const axios = require('axios');
 
 class CascadeMessenger {
   constructor(apiKey) {
-    this.baseUrl = 'https://api.counterbat.com';
+    this.baseUrl = 'https://restapi.smsbat.com';
     this.headers = {
       'Content-Type': 'application/json',
       'X-Authorization-Key': apiKey
@@ -438,7 +438,7 @@ console.log(`Sent ${results.length} messages`);
 <?php
 
 class CascadeMessenger {
-    private $baseUrl = 'https://api.counterbat.com';
+    private $baseUrl = 'https://restapi.smsbat.com';
     private $apiKey;
 
     public function __construct($apiKey) {
