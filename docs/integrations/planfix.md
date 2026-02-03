@@ -25,6 +25,8 @@ Navigate to **Account Management > Integrations > Chats > Planfix Chat API** in 
 
 Select the **SMSBAT** integration from the list and enable it.
 
+![Planfix Chat API integration with SMSBAT enabled](planfix/chat-api-integration.png)
+
 ### 1.2 Configure Integration Parameters
 
 Fill in the integration settings with the credentials provided by SMSBAT:
@@ -40,6 +42,8 @@ Fill in the integration settings with the credentials provided by SMSBAT:
 | **Task Template** | Select the template to use for creating tasks with chat |
 | **Contact Template** | Select the template for creating new contacts |
 
+![Integration parameters form](planfix/integration-parameters.png)
+
 !!! info "Getting Credentials"
     Contact SMSBAT support at help@smsbat.com to receive your integration credentials (Request URL, Authorization Key, and Notification URL).
 
@@ -49,6 +53,8 @@ Configure how Planfix handles incoming chat messages:
 
 - **Create a new task if there are no active tasks with this contact** - Enable this option if your workflow involves short interactions or lead processing where each inquiry should create a new task.
 - If your sales cycles are longer or you provide ongoing support, it is better to reopen existing tasks to keep the full conversation history with the client.
+
+![Chat integration options — task creation checkbox](planfix/chat-options.png)
 
 ## Step 2: Template and Chat Automation Setup
 
@@ -68,6 +74,8 @@ Example task template configuration:
 | **Phone** | Client phone number |
 | **Counterparty** | Client counterparty |
 | **Description** | Your approved greeting message template |
+
+![Task template configuration](planfix/task-template.png)
 
 ### 2.3 Quick Interactions Workflow
 
@@ -101,6 +109,8 @@ Create an automation scenario that triggers when a task status changes to **Comp
 2. Set `Start chat` field to checked
 3. Update the planned completion date to current date + 1 hour
 
+![Automation scenario — Reopen Chat](planfix/automation-reopen-chat.png)
+
 #### 2.4.2 Reopen Chat on New Comment
 
 Create automation scenarios that reopen the chat when a new comment is added (either from a lead/client or from an employee):
@@ -119,6 +129,8 @@ Create automation scenarios that reopen the chat when a new comment is added (ei
 2. Update planned completion date to current date + 1 hour
 3. Update task name with current timestamp and client info
 
+![Automation scenario — Reopen Chat (Employee)](planfix/automation-reopen-employee.png)
+
 **Scenario: "Reopen Chat (Client)"**
 
 | Setting | Value |
@@ -133,6 +145,8 @@ Create automation scenarios that reopen the chat when a new comment is added (ei
 2. Update planned completion date to current date + 1 hour
 3. Update task name with current timestamp and client info
 
+![Automation scenario — Reopen Chat (Client)](planfix/automation-reopen-client.png)
+
 ## Step 3: Sending Messages (Lead Notifications)
 
 ### Notification Recipients
@@ -143,15 +157,21 @@ When sending a comment (notifying a lead), make sure the contact (lead) is check
 
 If the lead's checkbox is unchecked in the recipient list, the client will **not** receive the notification. You can use this to leave internal comments visible only to your team.
 
+![Notification checkbox unchecked — client will not receive the message](planfix/notification-unchecked.png)
+
 ### 3.2 Checkbox Checked - Client Will Receive the Message
 
 If the lead's checkbox is checked, the message will be sent to the client via Viber or SMS through SMSBAT.
+
+![Notification checkbox checked — client will receive the message](planfix/notification-checked.png)
 
 ### 3.3 Verifying Message Delivery
 
 #### Check delivery status in Planfix
 
 Click on the checkmark icon next to a sent message to view the delivery report for all recipients of that comment.
+
+![Delivery checkmark on a sent message](planfix/delivery-checkmark.png)
 
 #### Verify in the delivery report
 
