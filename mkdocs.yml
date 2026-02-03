@@ -66,6 +66,7 @@ plugins:
             API: API
             Integrations: Інтеграції
             Planfix: Planfix
+            Bitrix24: Bitrix24
 
 markdown_extensions:
   - pymdownx.highlight:
@@ -131,6 +132,7 @@ nav:
   - Integrations:
     - integrations/index.md
     - Planfix: integrations/planfix.md
+    - Bitrix24: integrations/bitrix24.md
     - PHP: integrations/php.md
     - Python: integrations/python.md
     - Node.js: integrations/nodejs.md

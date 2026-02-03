@@ -17,6 +17,19 @@ Integrate SMSBAT with Planfix CRM to send Viber and SMS messages directly from t
 - Chat reopening automation
 - Delivery status tracking within Planfix
 
+### Bitrix24
+
+Install the SMSBAT Messenger app in Bitrix24 to send Viber and SMS messages from the Contact Center. Supports SMS fallback delivery.
+
+[Set up Bitrix24 integration →](bitrix24.md)
+
+**Key Features:**
+
+- Send Viber messages from Bitrix24 Contact Center
+- SMS fallback when Viber delivery fails
+- Open Line channel integration
+- Simple app installation with no coding required
+
 ## Programming Languages
 
 Ready-to-use code examples and libraries for integrating SMSBAT API into your application:
