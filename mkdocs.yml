@@ -65,6 +65,7 @@ plugins:
             Fallback Strategies: Fallback стратегії
             API: API
             Integrations: Інтеграції
+            Planfix: Planfix
 
 markdown_extensions:
   - pymdownx.highlight:
@@ -129,6 +130,7 @@ nav:
       - Message Types: api/cascade/message-types.md
   - Integrations:
     - integrations/index.md
+    - Planfix: integrations/planfix.md
     - PHP: integrations/php.md
     - Python: integrations/python.md
     - Node.js: integrations/nodejs.md
