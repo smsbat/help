@@ -1,3 +1,7 @@
+---
+faq_category: general
+---
+
 # SMSBAT Documentation
 
 Welcome to the official documentation for **SMSBAT** - a reliable multi-channel messaging platform with powerful API solutions.
