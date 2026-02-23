@@ -60,6 +60,7 @@ plugins:
             Using SMSBAT: Використання SMSBAT
             Quickstart: Швидкий старт
             Authentication: Автентифікація
+            Security Recommendations: Рекомендації з безпеки
             Message Types: Типи повідомлень
             Delivery Status: Статуси доставки
             Fallback Strategies: Fallback стратегії
@@ -67,6 +68,8 @@ plugins:
             Integrations: Інтеграції
             Planfix: Planfix
             Bitrix24: Bitrix24
+            Policies: Політики
+            Information Security Terms: Умови інформаційної безпеки
 
 markdown_extensions:
   - pymdownx.highlight:
@@ -102,39 +105,42 @@ extra_css:
 nav:
   - Home: index.md
   - Using SMSBAT:
-    - using-smsbat/index.md
-    - Quickstart: using-smsbat/quickstart.md
-    - Authentication: using-smsbat/authentication.md
-    - Message Types: using-smsbat/message-types.md
-    - Delivery Status: using-smsbat/delivery-status.md
-    - Fallback Strategies: using-smsbat/fallback.md
+      - using-smsbat/index.md
+      - Quickstart: using-smsbat/quickstart.md
+      - Authentication: using-smsbat/authentication.md
+      - Security Recommendations: using-smsbat/security-recommendations.md
+      - Message Types: using-smsbat/message-types.md
+      - Delivery Status: using-smsbat/delivery-status.md
+      - Fallback Strategies: using-smsbat/fallback.md
   - API:
-    - api/index.md
-    - SMSBAT API:
-      - api/smsbat/index.md
-      - Send Message: api/smsbat/send-message.md
-      - Viber Messages: api/smsbat/viber.md
-      - SMS Messages: api/smsbat/sms.md
-      - RCS Messages: api/smsbat/rcs.md
-      - Flash Call: api/smsbat/flashcall.md
-      - Check Status: api/smsbat/status.md
-    - ChatHub API:
-      - api/chathub/index.md
-      - Authentication: api/chathub/authentication.md
-      - Operators: api/chathub/operators.md
-      - Organizations: api/chathub/organizations.md
-      - Widget Integration: api/chathub/widget.md
-    - Cascade API:
-      - api/cascade/index.md
-      - Send Cascade Messages: api/cascade/send.md
-      - Message Variables: api/cascade/variables.md
-      - Message Types: api/cascade/message-types.md
+      - api/index.md
+      - SMSBAT API:
+          - api/smsbat/index.md
+          - Send Message: api/smsbat/send-message.md
+          - Viber Messages: api/smsbat/viber.md
+          - SMS Messages: api/smsbat/sms.md
+          - RCS Messages: api/smsbat/rcs.md
+          - Flash Call: api/smsbat/flashcall.md
+          - Check Status: api/smsbat/status.md
+      - ChatHub API:
+          - api/chathub/index.md
+          - Authentication: api/chathub/authentication.md
+          - Operators: api/chathub/operators.md
+          - Organizations: api/chathub/organizations.md
+          - Widget Integration: api/chathub/widget.md
+      - Cascade API:
+          - api/cascade/index.md
+          - Send Cascade Messages: api/cascade/send.md
+          - Message Variables: api/cascade/variables.md
+          - Message Types: api/cascade/message-types.md
   - Integrations:
-    - integrations/index.md
-    - Planfix: integrations/planfix.md
-    - Bitrix24: integrations/bitrix24.md
-    - PHP: integrations/php.md
-    - Python: integrations/python.md
-    - Node.js: integrations/nodejs.md
-    - Java: integrations/java.md
-    - C#: integrations/csharp.md
+      - integrations/index.md
+      - Planfix: integrations/planfix.md
+      - Bitrix24: integrations/bitrix24.md
+      - PHP: integrations/php.md
+      - Python: integrations/python.md
+      - Node.js: integrations/nodejs.md
+      - Java: integrations/java.md
+      - C#: integrations/csharp.md
+  - Policies:
+      - Information Security Terms: policies/information-security-terms.md
