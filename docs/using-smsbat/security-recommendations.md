@@ -20,8 +20,11 @@ SMSBAT password strength is important for your account's security. Follow these 
 Here's how to manage account user credentials for maximum security:
 
 1. Within the SMSBAT web interface, navigate to your team and user settings.
+
 2. Limit the Account Manager or Administrator roles strictly to personnel who require full access. 
+
 3. For daily operations and API integrations, assign roles with the principle of least privilege.
+
 4. Verify all users' email addresses and phone numbers.
 
 ## API-Related Security Controls
@@ -48,8 +51,11 @@ To mitigate the risk of token or API key abuse:
 Pay close attention to the URL and site content to ensure you are logging into the legitimate SMSBAT portal:
 
 1. **Check the domain name:** The domain name can help confirm that you are landing on a legitimate SMSBAT site. It should always end in `smsbat.com`. Watch out for domains that imitate actual businesses (e.g., "smsbät.com", "sms-bat.com" if not officially communicated).
+
 2. **Check the site's security status:** Look for the padlock icon in your browser's address bar to verify the connection is secured with HTTPS.
+
 3. **Evaluate the URL:** A website's URL consists of the connection type ("HTTPS"), application, domain name ("smsbat"), extension (".com"), and the file path. Verify that the URL is exact.
+
 4. **Review Certificate details:** Most browsers allow you to view the security certificate by clicking the padlock icon in the address bar. Ensure the certificate is issued to the correct entity.
 
 If you suspect a phishing attempt or any security-related issues, please contact `help@smsbat.com` immediately.
